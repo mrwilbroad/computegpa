@@ -1,6 +1,6 @@
 import React from "react";
 
-const compute_emoji = (gpa) => {
+const ComputeEmoji = (gpa) => {
   gpa = Number(gpa);
   if (gpa >= 4) {
     return <small>&#128514;</small>;
@@ -13,4 +13,4 @@ const compute_emoji = (gpa) => {
   }
 };
 
-export default compute_emoji;
+export default ComputeEmoji;

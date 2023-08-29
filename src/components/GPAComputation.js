@@ -1,4 +1,4 @@
-const GPA_Computation = (score, weight) => {
+const GPAComputation = (score, weight) => {
   var point = Number(0);
   switch (Grade(score)) {
     case "A":
@@ -49,4 +49,4 @@ const Grade = (score) => {
   }
 };
 
-export default GPA_Computation;
+export default GPAComputation;

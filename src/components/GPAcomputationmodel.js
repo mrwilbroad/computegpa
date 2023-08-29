@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Modal, Table } from "react-bootstrap";
 
-const GPA_computation_model = ({
+const GPAcomputationmodel = ({
   ModelOpen,
   SetModelOpen,
   children,
@@ -97,4 +97,4 @@ const GPA_computation_model = ({
   );
 };
 
-export default GPA_computation_model;
+export default GPAcomputationmodel;

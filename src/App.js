@@ -3,9 +3,9 @@ import { FieldArray, Formik, Field, Form, ErrorMessage } from "formik";
 import { Card, Row, Col, Spinner, Alert } from "react-bootstrap";
 import PrintErrorMessage from "./components/Formik/PrintErrorMessage";
 import React, { useState } from "react";
-import GPA_computation_model from "./components/GPA_computation_model";
-import GPA_Computation from "./components/GPA_Computation";
-import compute_emoji from "./components/compute_emoji";
+import GPAcomputationmodel from "./components/GPAcomputationmodel";
+import GPAComputation from "./components/GPAComputation";
+import ComputeEmoji from "./components/ComputeEmoji";
 
 const App = () => {
   const initialValues = {
@@ -41,11 +41,11 @@ const App = () => {
     let sumpoint = 0;
     let totalpoint = 0;
     for (var subject of values.subject_info) {
-      sumpoint += GPA_Computation(subject.score, subject.weight);
+      sumpoint += GPAComputation(subject.score, subject.weight);
       totalpoint += Number(subject.weight);
     }
     const GPA = sumpoint / totalpoint;
-    setEmoji(compute_emoji(GPA));
+    setEmoji(ComputeEmoji(GPA));
     submitprops.setSubmitting(false);
     SetGPAmessage(`Keep Striving ! GPA is ${GPA}`);
     setShow(true);
@@ -98,7 +98,7 @@ const App = () => {
                                 <section key={index}>
                                   <section
                                     className={`${
-                                      index == 0 ? "d-sm-flex" : "d-flex"
+                                      index === 0 ? "d-sm-flex" : "d-flex"
                                     } justify-content-between gap-1 my-0`}
                                   >
                                     <p className="text-danger my-auto">
@@ -199,7 +199,7 @@ const App = () => {
               </Form>
             )}
           </Formik>
-          <GPA_computation_model
+          <GPAcomputationmodel
             ModelOpen={ShowModel}
             SetModelOpen={SetModelOpen}
           />
@@ -216,6 +216,7 @@ const App = () => {
         </a>-All sourve code are available!</small>
         <a
           target="_blank"
+          rel="noreferrer"
           className="text-light text-decoration-none border-bottom"
           href="https://github.com/mrwilbroad"
         >
