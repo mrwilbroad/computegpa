@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/computegpa/static/css/main.565d8800.css",
-    "main.js": "/computegpa/static/js/main.b68f267f.js",
+    "main.js": "/computegpa/static/js/main.ccea33c7.js",
     "static/js/787.c7b721ff.chunk.js": "/computegpa/static/js/787.c7b721ff.chunk.js",
     "index.html": "/computegpa/index.html",
     "main.565d8800.css.map": "/computegpa/static/css/main.565d8800.css.map",
-    "main.b68f267f.js.map": "/computegpa/static/js/main.b68f267f.js.map",
+    "main.ccea33c7.js.map": "/computegpa/static/js/main.ccea33c7.js.map",
     "787.c7b721ff.chunk.js.map": "/computegpa/static/js/787.c7b721ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.565d8800.css",
-    "static/js/main.b68f267f.js"
+    "static/js/main.ccea33c7.js"
   ]
 }
