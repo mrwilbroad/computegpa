@@ -16,6 +16,7 @@ const App = () => {
       },
     ],
   };
+
   const [ShowModel, SetModelOpen] = useState(false);
   const [Gpamessage, SetGPAmessage] = useState("");
   const [show, setShow] = useState(false);
@@ -49,6 +50,10 @@ const App = () => {
     submitprops.setSubmitting(false);
     SetGPAmessage(`Keep Striving ! GPA is ${GPA}`);
     setShow(true);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
   };
 
   return (
@@ -59,7 +64,7 @@ const App = () => {
       >
         <Card.Body as="section">
           <Card.Title as="small" className="text-center d-block">
-            GPA expedition, From 'Oh No' to 'Oh Year' <small className="fs-5">&#128540;</small>
+            GPA expedition, From 'Oh No' to 'Oh Yeah' <small className="fs-5">&#128540;</small>
           </Card.Title>
 
           <Alert
@@ -71,8 +76,9 @@ const App = () => {
             onClose={() => setShow(!show)}
           >
             <p className="d-inline">{Gpamessage}
-            </p>
             <small className="fs-3 mx-2">{Emoji}</small>
+            </p>
+            
           </Alert>
 
           <Formik
@@ -83,9 +89,9 @@ const App = () => {
             validationSchema={ValidateScheme}
           >
             {(formik) => (
-              <Form>
-                <Row className="gy-3">
-                  <Col lg={12} sm={12} md={12}>
+              <Form className="position-relative">
+                <Row className="gy-3 justify-content-center">
+                  <Col lg={10} sm={12} md={12}>
                     <hr />
                     <p>Fill subject information as required!</p>
                     <section className="vstack m-0">
@@ -99,7 +105,7 @@ const App = () => {
                                   <section
                                     className={`${
                                       index === 0 ? "d-sm-flex" : "d-flex"
-                                    } justify-content-between gap-1 my-0`}
+                                    } justify-content-between justify-content-lg-start gap-1 my-0`}
                                   >
                                     <p className="text-danger my-auto">
                                       Subject {index + 1}
@@ -115,26 +121,30 @@ const App = () => {
                                               })
                                             }
                                             type="button"
-                                            className="btn bgc-dark-blue  btn-outline-primary border-success  text-light"
+                                            className="btn
+                                            position-absolute end-0 ms-2 bottom-0 mb-5                                           bgc-dark-blue  btn-outline-primary border-success  text-light"
                                           >
                                             Add subjects
                                           </button>
-                                          <div className="vr" />
+                      
                                         </>
                                       )}
-                                      <button
+                                      { index > 0  &&
+                                      <>
+                                      <div className="vr" />
+                                       <button
                                         disabled={subject_info.length <= 1}
                                         type="button"
                                         onClick={() => remove(index)}
                                         className="btn  btn-danger border text-light"
                                       >
                                         Remove {index + 1}
-                                      </button>
+                                      </button></>}
                                     </section>
                                   </section>
 
                                   <Row as="section" className="g-3 mt-1 py-3">
-                                    <Col lg={4} sm={12}>
+                                    <Col lg={3} sm={12}>
                                       <Field
                                         className="form-control"
                                         placeholder="score e.g 80 e.tc"
@@ -146,7 +156,7 @@ const App = () => {
                                       />
                                     </Col>
 
-                                    <Col lg={4} sm={12}>
+                                    <Col lg={3} sm={12}>
                                       <Field
                                         className="form-control"
                                         placeholder="weight/credit e.g 10.2  e.t.c"
@@ -167,7 +177,7 @@ const App = () => {
                       </FieldArray>
                     </section>
 
-                    <section className="mt-3 text-end">
+                    <section className="mt-5 text-end">
                       <button
                         onClick={() => SetModelOpen(!ShowModel)}
                         type="button"
@@ -213,14 +223,14 @@ const App = () => {
           href="https://github.com/mrwilbroad"
         >
          Github
-        </a>-All sourve code are available!</small>
+        </a>-All source code are available!</small>
         <a
           target="_blank"
           rel="noreferrer"
           className="text-light text-decoration-none border-bottom"
           href="https://github.com/mrwilbroad"
         >
-          Developed by mrwilbroad
+          mrwilbroad
         </a>
       </footer>
     </section>

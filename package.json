@@ -4,8 +4,7 @@
   "private": true,
   "homepage": "https://mrwilbroad.github.io/computegpa",
   "keywords": [
-    "mrwilbroad","How to compute GPA", "University of Dodoma", "UDOM",
-    "Wilbroad Mark", "GPA", "how to compute"
+    "mrwilbroad","How to compute GPA", "University of Dodoma", "GPA", "how to compute"
   ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
